@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Caption Way - Capture Google Meet captions and export as PDF." />
+    <title>Caption Way</title>
+    <link rel="stylesheet" href="popup.css" />
+
+    <!-- ✅ Load jsPDF -->
+    <script src="jspdf.umd.min.js"></script>
+
+    <!-- ✅ Error handling helpers -->
+    
+     <script src="logger.js"></script>
+    <!-- ✅ Main popup logic (with defer to load after DOM) -->
+    <script src="popup.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Caption Way</h1>
+
+      <!-- Status -->
+      <div id="status" class="pill idle">
+        Status: <span id="recState">Idle</span>
+      </div>
+
+      <!-- Controls -->
+      <div class="row">
+        <button id="startBtn">Start</button>
+        <button id="stopBtn">Stop</button>
+        <button id="closeBtn" style="max-width: 40px;">✖</button>
+      </div>
+
+      <div class="row">
+        <button id="downloadPdf">Download PDF</button>
+        <button id="clearBtn">Clear</button>
+      </div>
+
+      <!-- Info -->
+      <p class="meta">
+        Open a Google Meet and turn on <strong>Captions</strong>.
+        Then click <em>Start</em>.
+      </p>
+      <p class="count">Captured lines: <span id="count">0</span></p>
+    </main>
+  </body>
+</html>
+
